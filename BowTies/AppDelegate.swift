@@ -41,7 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    true
+    ColorAttributeTransformer.register()
+    
+    return true
   }
 
   // MARK: UISceneSession Lifecycle
