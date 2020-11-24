@@ -43,23 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ) -> Bool {
     ColorAttributeTransformer.register()
     
-    // Save test bow tie
-    let bowtie = NSEntityDescription.insertNewObject(forEntityName: "BowTie", into: self.persistentContainer.viewContext) as! BowTie
-    bowtie.name = "My bow tie"
-    bowtie.lastWorn = Date()
-    saveContext()
-    
-    // Retrieve test bow tie
-    let request: NSFetchRequest<BowTie> = BowTie.fetchRequest()
-    
-    if let ties = try? self.persistentContainer.viewContext.fetch(request),
-       let testName = ties.first?.name,
-       let testLastWorn = ties.first?.lastWorn {
-      print("Name: \(testName), Worn: \(testLastWorn)")
-    } else {
-      print("Test failed.")
-    }
-    
     return true
   }
 
